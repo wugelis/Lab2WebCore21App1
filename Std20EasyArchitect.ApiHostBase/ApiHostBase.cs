@@ -17,6 +17,10 @@ namespace Std20EasyArchitect.ApiHostBase
     [Route("api/[controller]/{*pathInfo}")]
     public class ApiHostBase: ControllerBase
     {
+        /// <summary>
+        /// 取得 HTTP Body 參數內容方法
+        /// </summary>
+        /// <returns></returns>
         private object GetParameter()
         {
             object inputStramStr = null;
@@ -40,13 +44,19 @@ namespace Std20EasyArchitect.ApiHostBase
 
             return inputStramStr;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         private string ReleaseStartEndQuotes(string parameter)
         {
             parameter = parameter.StartsWith("\"") ? parameter.Substring(1, parameter.Length - 1) : parameter;
             parameter = parameter.EndsWith("\"") ? parameter.Substring(0, parameter.Length - 1) : parameter;
             return parameter;
         }
+
+        #region The binary read method.
         /// <summary>
         /// The binary read method.
         /// </summary>
@@ -103,8 +113,10 @@ namespace Std20EasyArchitect.ApiHostBase
                 }
             }
         }
+        #endregion
+
         /// <summary>
-        /// 
+        /// ApiHostBase 核心所提供的共用的 Post 方法
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="nameSpace"></param>
@@ -204,48 +216,8 @@ namespace Std20EasyArchitect.ApiHostBase
                                     invokeObj = JsonConvert.DeserializeObject(parameter.ToString(), parameType);
                                     break;
                             }
-                            /*
-                            foreach (PropertyInfo p in parameObj.GetType().GetProperties())
-                            {
-                                if(parameType.ToString() == "System.Int16"
-                                    || parameType.ToString() == "System.Int32"
-                                    || parameType.ToString() == "System.Int64"
-                                    || parameType.ToString() == "System.Double"
-                                    || parameType.ToString() == "System.Single"
-                                    || parameType.ToString() == "System.Decimal"
-                                    || parameType.ToString() == "System.DateTime"
-                                    || parameType.ToString() == "System.Boolean"
-                                    || parameType.ToString() == "System.String")
-                                {
-                                    //parameType.GetType().
-                                    invokeObj = Activator.CreateInstance(parameType, new object[] { parameObj });
-                                    //invokeObj = 
-                                }
-                                else
-                                {
-                                    if(parameType.ToString() == "System.Byte[]")
-                                    {
-                                        if (parameter is Stream)
-                                        {
-                                            Stream content = parameter as Stream;
-                                            //BinaryReader br = new BinaryReader(content);
-                                            invokeObj = BinaryReadToEnd(content); //br.ReadBytes(content.Length);
-                                        }
-                                        else
-                                        {
-                                            invokeObj = JsonConvert.DeserializeObject(parameter.ToString(), parameType);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        invokeObj = JsonConvert.DeserializeObject(parameter.ToString(), parameType);
-                                    }
-                                }
-                            }
-                            */
 
                             result = method.Invoke(targetObj, new object[] { invokeObj });
-
                         }
                     }
                 }
@@ -281,7 +253,16 @@ namespace Std20EasyArchitect.ApiHostBase
 
             object result = null;
             object targetObj = null;
-            Assembly assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+            Assembly assem = null;
+            try
+            {
+                assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+            }
+            catch(Exception ex)
+            {
+                assem = Assembly.LoadFrom(Path.Combine(Directory.GetCurrentDirectory(), $"bin\\Debug\\netcoreapp2.1\\{fileName}.dll"));
+            }
+            
             if(assem != null)
             {
                 Type targetType = assem.GetType($"{nameSpace}.{className}");

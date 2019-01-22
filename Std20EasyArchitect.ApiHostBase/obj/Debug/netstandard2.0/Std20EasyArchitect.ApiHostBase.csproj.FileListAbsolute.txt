@@ -6,3 +6,4 @@ D:\Temp\20190112\Lab2Std\Std20EasyArchitect.ApiHostBase\obj\Debug\netstandard2.0
 D:\Temp\20190112\Lab2Std\Std20EasyArchitect.ApiHostBase\bin\Debug\netstandard2.0\Std20EasyArchitect.ApiHostBase.pdb
 D:\Temp\20190112\Lab2Std\Std20EasyArchitect.ApiHostBase\obj\Debug\netstandard2.0\Std20EasyArchitect.ApiHostBase.dll
 D:\Temp\20190112\Lab2Std\Std20EasyArchitect.ApiHostBase\obj\Debug\netstandard2.0\Std20EasyArchitect.ApiHostBase.pdb
+D:\Temp\20190112\Lab2Std\Std20EasyArchitect.ApiHostBase\obj\Debug\netstandard2.0\Std20EasyArchitect.ApiHostBase.csprojAssemblyReference.cache
