@@ -3,7 +3,6 @@ D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\Lab2WebCore21
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\Lab2WebCore21App1.runtimeconfig.dev.json
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\Lab2WebCore21App1.dll
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\Lab2WebCore21App1.pdb
-D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.csprojAssemblyReference.cache
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.csproj.CoreCompileInputs.cache
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.RazorAssemblyInfo.cache
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.RazorAssemblyInfo.cs
@@ -17,3 +16,8 @@ D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\Std20EasyArch
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.csproj.CopyComplete
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\HelloTestBO.dll
 D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\HelloTestBO.pdb
+D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\bin\Debug\netcoreapp2.1\appsettings.json
+D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.csproj.AssemblyReference.cache
+D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Temp\20190112\Lab2Std\Lab2WebCore21App1\obj\Debug\netcoreapp2.1\Lab2WebCore21App1.genruntimeconfig.cache

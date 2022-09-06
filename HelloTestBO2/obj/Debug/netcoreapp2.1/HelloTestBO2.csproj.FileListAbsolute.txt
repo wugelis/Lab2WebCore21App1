@@ -6,3 +6,4 @@ D:\Temp\20190112\Lab2Std\HelloTestBO2\obj\Debug\netcoreapp2.1\HelloTestBO2.Assem
 D:\Temp\20190112\Lab2Std\HelloTestBO2\obj\Debug\netcoreapp2.1\HelloTestBO2.AssemblyInfo.cs
 D:\Temp\20190112\Lab2Std\HelloTestBO2\obj\Debug\netcoreapp2.1\HelloTestBO2.dll
 D:\Temp\20190112\Lab2Std\HelloTestBO2\obj\Debug\netcoreapp2.1\HelloTestBO2.pdb
+D:\Temp\20190112\Lab2Std\HelloTestBO2\obj\Debug\netcoreapp2.1\HelloTestBO2.csprojAssemblyReference.cache

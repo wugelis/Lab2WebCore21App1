@@ -146,7 +146,10 @@ namespace Std20EasyArchitect.ApiHostBase
 
             object parameter = GetParameter();
 
-            Assembly assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+            //Assembly assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+            Assembly assem = null;
+            result = GetRuntimeAssemblyType(ref assem, fileName);
+
             if(assem != null)
             {
                 Type runtimeType = assem.GetType($"{nameSpace}.{className}");
@@ -165,11 +168,7 @@ namespace Std20EasyArchitect.ApiHostBase
                             string paramName = parames[0].Name;
                             Type propertyType = parames[0].GetType();
 
-                            //parames[0].ParameterType.Name.Dump();
-
                             Type parameType = parames[0].ParameterType;
-                            //ConstructorInfo constructor = parameType.GetConstructor(Type.EmptyTypes);
-                            //object parameObj = constructor.Invoke(null);
 
                             switch (parameType.ToString())
                             {
@@ -204,8 +203,7 @@ namespace Std20EasyArchitect.ApiHostBase
                                     if (parameter is Stream)
                                     {
                                         Stream content = parameter as Stream;
-                                        //BinaryReader br = new BinaryReader(content);
-                                        invokeObj = BinaryReadToEnd(content); //br.ReadBytes(content.Length);
+                                        invokeObj = BinaryReadToEnd(content);
                                     }
                                     else
                                     {
@@ -224,6 +222,33 @@ namespace Std20EasyArchitect.ApiHostBase
             }
 
             return result;
+        }
+
+        protected object GetRuntimeAssemblyType(ref Assembly assem, string fileName)
+        {
+            object ret = null;
+            try
+            {
+                assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
+            }
+            catch
+            {
+                try
+                {
+                    assem = Assembly.LoadFrom(Path.Combine(Directory.GetCurrentDirectory(), $"bin\\Debug\\netcoreapp2.1\\{fileName}.dll"));
+                }
+                catch (Exception ex)
+                {
+                    ret = new string[] { $"找不到所需要的 DLLs 名稱為 {fileName} 的檔案！請確認該 DLL 是否存在於 ./bin 資料夾中！" }
+                    .Select(c => new
+                    {
+                        Err = c,
+                        SysErr = ex.Message
+                    }).ToList();
+                }
+            }
+
+            return ret;
         }
         /// <summary>
         /// ApiHostBase 核心所提供的共用的 Get 方法
@@ -254,15 +279,9 @@ namespace Std20EasyArchitect.ApiHostBase
             object result = null;
             object targetObj = null;
             Assembly assem = null;
-            try
-            {
-                assem = Assembly.Load($"{fileName}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
-            }
-            catch(Exception ex)
-            {
-                assem = Assembly.LoadFrom(Path.Combine(Directory.GetCurrentDirectory(), $"bin\\Debug\\netcoreapp2.1\\{fileName}.dll"));
-            }
-            
+
+            result = GetRuntimeAssemblyType(ref assem, fileName);
+
             if(assem != null)
             {
                 Type targetType = assem.GetType($"{nameSpace}.{className}");

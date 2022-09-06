@@ -7,6 +7,7 @@ using Std20EasyArchitect.ApiHostBase;
 
 namespace Lab2WebCore21App1.Controllers
 {
+    [Route("api/{fileName}/{nameSpace}/{className}/{methodName}/{*pathInfo}")]
     public class ValuesController : ApiHostBase
     {
     }

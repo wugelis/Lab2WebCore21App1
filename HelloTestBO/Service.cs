@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using HelloTestBO.DTO;
 using System.Collections.Generic;
+using System.Net;
 
 namespace HelloTestBO
 {
@@ -10,6 +11,8 @@ namespace HelloTestBO
     {
         public string GetHelloWorld()
         {
+            WebClient client = new WebClient();
+
             return "Hi!!. Std2.0 EasyArchitect Test!!!.";
         }
 

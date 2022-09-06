@@ -6,4 +6,5 @@ D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.Assembl
 D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.AssemblyInfo.cs
 D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.dll
 D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.pdb
-D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.csprojAssemblyReference.cache
+D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.csproj.AssemblyReference.cache
+D:\Temp\20190112\Lab2Std\HelloTestBO\obj\Debug\netcoreapp2.1\HelloTestBO.GeneratedMSBuildEditorConfig.editorconfig
